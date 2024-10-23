@@ -7,17 +7,22 @@ Before you begin, ensure you have met the following requirements:
 - MongoDB account and a cluster set up. You can use [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) for a cloud-based solution.
 
 ## Installation
-1. Clone the repository:
-   git clone https://github.com/your-username/user-form-submission.git
-   cd user-form-submission
-2.Install the dependencies:
-   npm install
-3.Create a .env file in the root of the project and add the following variables:
-  PORT=5000
-  DB_URL=mongodb+srv://<username>:<password>@cluster0.mongodb.net/formDB?retryWrites=true&w=majority
-# Note- Replace <username> and <password> with your MongoDB credentials.
+
+Clone the repository:
+   ```git clone https://github.com/your-username/user-form-submission.git```
+   
+   ```cd userFormBd```
+
+Install the dependencies:
+   ```npm install```
+   
+Create a .env file in the root of the project and add the following variables:
+
+     PORT=5000
+     DB_URL=mongodb+srv://<username>:<password>@cluster0.mongodb.net/formDB?retryWrites=true&w=majority
+Note-``` Replace <username> and <password> with your MongoDB credentials.```
 
 # Usage
 To run the project, use the following command:
-npm run dev
+```npm run dev```
 This will start the server on the specified port. You can access the application at http://localhost:5000.
