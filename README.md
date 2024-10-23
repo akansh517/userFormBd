@@ -9,10 +9,8 @@ Before you begin, ensure you have met the following requirements:
 ## Installation
 
 Clone the repository:
-   ```https://github.com/akansh517/userFormBd.git```
+   ```git clone https://github.com/akansh517/userFormBd.git```
    
-   ```cd userFormBd```
-
 Install the dependencies:
    ```npm install```
    
