@@ -1,4 +1,8 @@
-const { userValidationRules, validate, User } = require("../models/userModel");
+const {
+  userValidationRules,
+  validate,
+  createUser
+} = require("../models/userModel");
 
 exports.getForm = (req, res) => {
   res.render("form");
@@ -9,9 +13,7 @@ exports.submitForm = [
   validate,
   async (req, res) => {
     try {
-      const { name, email, phone } = req.body;
-      const user = new User({ name, email, phone });
-      await user.save();
+      await createUser(req.body);
       res.render("success");
     } catch (err) {
       console.log(err);

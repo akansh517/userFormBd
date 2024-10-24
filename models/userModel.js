@@ -7,21 +7,20 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     minlength: 3,
-    maxlength: 30,
-    match: [/^[a-zA-Z\s]+$/, "Name must contain only letters and spaces."],
+    maxlength: 30
   },
   email: {
     type: String,
     required: true,
-    match: [/\S+@\S+\.\S+/, "Email must be a valid email address."],
-    index: true,
+    index: true
   },
   phone: {
     type: String,
-    required: true,
-    match: [/^\d{10}$/, "Phone number must be exactly 10 digits."],
+    required: true
   },
 });
+
+const User = mongoose.model("User", userSchema);
 
 const userValidationRules = () => {
   return [
@@ -64,8 +63,13 @@ const validate = (req, res, next) => {
   res.status(400).json({ errors: formattedErrors });
 };
 
+const createUser = async (userData) => {
+  const user = new User(userData);
+  return await user.save();
+};
+
 module.exports = {
-  User: mongoose.model("User", userSchema),
   userValidationRules,
   validate,
+  createUser
 };
